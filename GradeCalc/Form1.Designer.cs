@@ -51,6 +51,8 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -102,6 +104,7 @@
             // panel2
             // 
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panel2.AutoScroll = true;
             this.panel2.AutoSize = true;
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
             this.panel2.Controls.Add(this.label3);
@@ -216,6 +219,7 @@
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(117, 30);
             this.textBox9.TabIndex = 0;
+            this.textBox9.TextChanged += new System.EventHandler(this.textBox9_TextChanged);
             // 
             // panel5
             // 
@@ -293,6 +297,26 @@
             this.textBox6.Size = new System.Drawing.Size(117, 30);
             this.textBox6.TabIndex = 0;
             // 
+            // panel6
+            // 
+            this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.panel6.Location = new System.Drawing.Point(-2, -5);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(885, 47);
+            this.panel6.TabIndex = 2;
+            this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.Lime;
+            this.panel7.Location = new System.Drawing.Point(667, 128);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(200, 145);
+            this.panel7.TabIndex = 4;
+            this.panel7.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -300,9 +324,10 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
             this.ClientSize = new System.Drawing.Size(879, 570);
+            this.Controls.Add(this.panel7);
+            this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel2);
             this.Name = "Form1";
-            this.ShowInTaskbar = false;
             this.Text = " ";
             this.TransparencyKey = System.Drawing.Color.Thistle;
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -327,13 +352,13 @@
         private TextBox textBox1;
         private TextBox textBox3;
         private TextBox textBox2;
-        private Panel panel2;
+        public Panel panel2;
         private Panel panel3;
         private TextBox textBox4;
         private TextBox textBox5;
         private TextBox textBox6;
         private Button button1;
-        private Panel panel4;
+        public Panel panel4;
         private TextBox textBox7;
         private TextBox textBox8;
         private TextBox textBox9;
@@ -345,5 +370,7 @@
         private Label label1;
         private Label label2;
         private Label label3;
+        private Panel panel6;
+        private Panel panel7;
     }
 }
