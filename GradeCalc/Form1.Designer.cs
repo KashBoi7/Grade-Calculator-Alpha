@@ -37,7 +37,9 @@
             this.button1 = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
+            this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -106,7 +108,6 @@
             // 
             this.button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.button1.BackColor = System.Drawing.Color.LimeGreen;
-            this.button1.Enabled = false;
             this.button1.Font = new System.Drawing.Font("Dubai", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.button1.Location = new System.Drawing.Point(77, 340);
@@ -114,6 +115,7 @@
             this.button1.Size = new System.Drawing.Size(252, 52);
             this.button1.TabIndex = 4;
             this.button1.Text = "Calculate";
+            this.button1.UseCompatibleTextRendering = true;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -131,11 +133,22 @@
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.Lime;
+            this.panel7.Controls.Add(this.label4);
             this.panel7.Location = new System.Drawing.Point(667, 128);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(200, 145);
             this.panel7.TabIndex = 4;
             this.panel7.Visible = false;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 29F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(32, 38);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(124, 52);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "label4";
             // 
             // Form1
             // 
@@ -153,6 +166,8 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -167,5 +182,6 @@
         private Label label3;
         private Panel panel6;
         private Panel panel7;
+        private Label label4;
     }
 }

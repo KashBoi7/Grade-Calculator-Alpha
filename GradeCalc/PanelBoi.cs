@@ -19,12 +19,7 @@ namespace GradeCalc
             
        /*      textBox1=new TextBox();
              textBox2 = new TextBox();
-             textBox3 = new TextBox();
-            textBox1.Location = new Point(3, 0);
-            textBox2.Size = new Size(55, 30);
-            textBox2.Location = new Point(126, 0);
-            textBox3.Size = new Size(55, 30);
-            textBox3.Location = new Point(187, 0);*/
+             tex0);*/
             // Initialize the Panel control.
             this.Location = new Point(77, x * 58);
             this.Size = new Size(252, 58);
