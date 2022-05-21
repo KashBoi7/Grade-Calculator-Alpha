@@ -46,14 +46,17 @@ namespace GradeCalc
         }
 
 
-      
+
 
         private void button1_Click(object sender, EventArgs e)
         {
-            float g=0;
-            float w=0;
-            float div=0;
+            int n = 0;
+          
+               float g = 0;
+            float w = 0;
+            float div = 0;
             FinalGrade = 0;
+            String G = "A";
 
 
             for (int i = 0; i < NumOfPanels; i++)
@@ -61,20 +64,75 @@ namespace GradeCalc
 
                 try
                 {
-                     g = Int32.Parse(Grade[i].Text) ;
-                     w = Int32.Parse(Weight[i].Text) ;
-                    div += w;
+                    g = Int32.Parse(Grade[i].Text);
+                    w = Int32.Parse(Weight[i].Text);
+
                     
-                }catch(Exception l)
+
+                }
+                catch (Exception l)
                 {
                     g = 0;
                     w = 0;
                 }
+                div += w;
                 FinalGrade += (g * w);
 
             }
+            
             FinalGrade = (FinalGrade / div);
-            label4.Text =FinalGrade.ToString();
+            if (FinalGrade >= 97)
+            {
+                G = "A+";
+            }else if (FinalGrade >= 93)
+            {
+                G = "A";
+            }
+            else if (FinalGrade >= 90)
+            {
+                G = "A-";
+            }
+            else if (FinalGrade >= 87)
+            {
+                G = "B+";
+            }
+            else if (FinalGrade >= 83)
+            {
+                G = "B";
+            }
+            else if (FinalGrade >= 80)
+            {
+                G = "B-";
+            }
+            else if (FinalGrade >= 77)
+            {
+                G = "C+";
+            }
+            else if (FinalGrade >= 73)
+            {
+                G = "C";
+            }
+            else if (FinalGrade >= 70)
+            {
+                G = "C-";
+            }
+            else if (FinalGrade >= 67)
+            {
+                G = "D+";
+            }
+            else if (FinalGrade >= 63)
+            {
+                G = "D";
+            }
+            else if (FinalGrade >= 60)
+            {
+                G = "D-";
+            }
+            else
+            {
+                G = "F";
+            }
+            label4.Text = G+" "+FinalGrade.ToString()+"%";
             panel7.Visible = true;
         }
 
