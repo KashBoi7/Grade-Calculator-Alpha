@@ -4,15 +4,15 @@ using System.Runtime.InteropServices;
 
 namespace GradeCalc
 {
-    
+
 
     public partial class Form1 : Form
     {
         public int NumOfPanels = 4;
         public float FinalGrade = 0;
         public List<TextBox> Grade = new List<TextBox>();
-        public List<TextBox> Weight=new List<TextBox> ();
-        
+        public List<TextBox> Weight = new List<TextBox>();
+
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
         (
@@ -27,13 +27,13 @@ namespace GradeCalc
         public Form1()
         {
             InitializeComponent();
-          
-           
-        }
-       
-    
 
-    private void Form1_Load(object sender, EventArgs e)
+
+        }
+
+
+
+        private void Form1_Load(object sender, EventArgs e)
         {
             CreateMyPanel(1);
             CreateMyPanel(2);
@@ -51,8 +51,8 @@ namespace GradeCalc
         private void button1_Click(object sender, EventArgs e)
         {
             int n = 0;
-          
-               float g = 0;
+
+            float g = 0;
             float w = 0;
             float div = 0;
             FinalGrade = 0;
@@ -67,7 +67,7 @@ namespace GradeCalc
                     g = Int32.Parse(Grade[i].Text);
                     w = Int32.Parse(Weight[i].Text);
 
-                    
+
 
                 }
                 catch (Exception l)
@@ -79,12 +79,13 @@ namespace GradeCalc
                 FinalGrade += (g * w);
 
             }
-            
+
             FinalGrade = (FinalGrade / div);
             if (FinalGrade >= 97)
             {
                 G = "A+";
-            }else if (FinalGrade >= 93)
+            }
+            else if (FinalGrade >= 93)
             {
                 G = "A";
             }
@@ -132,7 +133,7 @@ namespace GradeCalc
             {
                 G = "F";
             }
-            label4.Text = G+" "+FinalGrade.ToString()+"%";
+            label4.Text = G + " " + FinalGrade.ToString() + "%";
             panel7.Visible = true;
         }
 
@@ -146,38 +147,27 @@ namespace GradeCalc
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            panel2.Height = panel2.Height + 58;
-
-            
-            NumOfPanels++;
-            CreateMyPanel(NumOfPanels);
-
-            
 
 
-        }
-       
         public void CreateMyPanel(int x)
-{
+        {
             PanelBoi panel = new PanelBoi(x);
             panel2.Controls.Add(panel);
             Grade.Add(panel.textBox5);
             Weight.Add(panel.textBox6);
-            
+
 
 
 
         }
 
-        private void panel6_Paint(object sender, PaintEventArgs e)
+        private void rjButton1_Click(object sender, EventArgs e)
         {
+            panel2.Height = panel2.Height + 58;
 
+
+            NumOfPanels++;
+            CreateMyPanel(NumOfPanels);
         }
-
-   
-
-
-        }
+    }
 }
