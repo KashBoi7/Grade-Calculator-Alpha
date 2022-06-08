@@ -1,7 +1,6 @@
 using System;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
-
 namespace GradeCalc
 {
 
@@ -48,7 +47,42 @@ namespace GradeCalc
 
 
 
-        private void button1_Click(object sender, EventArgs e)
+       
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+
+
+        public void CreateMyPanel(int x)
+        {
+            PanelBoi panel = new PanelBoi(x);
+            panel2.Controls.Add(panel);
+            Grade.Add(panel.textBox5);
+            Weight.Add(panel.textBox6);
+
+
+
+
+        }
+
+        private void rjButton1_Click(object sender, EventArgs e)
+        {
+            panel2.Height = panel2.Height + 58;
+
+
+            NumOfPanels++;
+            CreateMyPanel(NumOfPanels);
+        }
+
+        private void rbutton1_Click(object sender, EventArgs e)
         {
             int n = 0;
 
@@ -134,40 +168,44 @@ namespace GradeCalc
                 G = "F";
             }
             label4.Text = G + " " + FinalGrade.ToString() + "%";
-            panel7.Visible = true;
+            if (!label4.Text.Equals("F NaN%"))
+            {
+                panel7.Visible = true;
+            }
         }
-
-        private void label1_Click(object sender, EventArgs e)
+        private void addUserControl(UserControl user)
         {
-
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-
-
-        public void CreateMyPanel(int x)
-        {
-            PanelBoi panel = new PanelBoi(x);
-            panel2.Controls.Add(panel);
-            Grade.Add(panel.textBox5);
-            Weight.Add(panel.textBox6);
-
-
-
+            user.Dock = DockStyle.Fill;
+            panel2.Controls.Clear();
+            panel2.Controls.Add(user);
+            user.BringToFront();
 
         }
+        Color good = Color.FromArgb(24, 30, 54);
 
-        private void rjButton1_Click(object sender, EventArgs e)
+
+        private void guna2Button1_Click(object sender, EventArgs e)
         {
-            panel2.Height = panel2.Height + 58;
+            panel2.Visible = true;
+            guna2Button2.CustomBorderColor = good;
+            guna2Button1.CustomBorderColor = Color.Red;
+            if (!label4.Text.Equals("F NaN%")&& !label4.Text.Equals("label4"))
+            {
+                panel7.Visible = true;
+            }
+            rjPanel1.Visible = false;
 
+        }
+   
 
-            NumOfPanels++;
-            CreateMyPanel(NumOfPanels);
+        private void guna2Button2_Click_1(object sender, EventArgs e)
+        {
+            panel2.Visible = false;
+            panel7.Visible = false;
+            guna2Button1.CustomBorderColor = good;
+            guna2Button2.CustomBorderColor = Color.Red;
+            rjPanel1.Visible = true;
+
         }
     }
 }
